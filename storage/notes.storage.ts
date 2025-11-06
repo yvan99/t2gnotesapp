@@ -1,26 +1,9 @@
 import { CreateNoteData, Note } from "@/interfaces/notes.interface";
+import { seedNotes } from "@/seeds/notes.seed";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const NOTES_KEY = "technician_notes";
 const SEED_KEY = "notes_seeded";
-
-const seedNotes: Note[] = [
-  {
-    id: "1",
-    title: "Welcome to Technician Notes",
-    description:
-      "This is your first sample note. You can edit, delete, or create new ones!",
-    status: "Open",
-    updatedAt: new Date().toISOString(),
-  },
-  {
-    id: "2",
-    title: "Sample In Progress Task",
-    description: "This note shows how an in-progress task looks in the app.",
-    status: "In Progress",
-    updatedAt: new Date().toISOString(),
-  },
-];
 
 export const notesStorage = {
   async initialize(): Promise<void> {
@@ -38,7 +21,7 @@ export const notesStorage = {
 
   async getNote(id: string): Promise<Note | null> {
     const notes = await this.getNotes();
-    return notes.find((note) => note.id) || null;
+    return notes.find((note) => note.id === id) || null;
   },
 
   async createNote(data: CreateNoteData): Promise<Note> {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
+import { showToast } from "@/utils/toast.util";
 
 export const usePhotoPicker = () => {
   const [pickingPhoto, setPickingPhoto] = useState(false);
@@ -11,7 +12,7 @@ export const usePhotoPicker = () => {
       const { status } =
         await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== "granted") {
-        alert("Sorry, we need camera roll permissions to make this work!");
+        showToast("Camera roll permissions are required", "error");
         return null;
       }
 
@@ -29,6 +30,7 @@ export const usePhotoPicker = () => {
       return null;
     } catch (error) {
       console.error("Error picking photo:", error);
+      showToast("Failed to pick photo", "error");
       return null;
     } finally {
       setPickingPhoto(false);
@@ -41,7 +43,7 @@ export const usePhotoPicker = () => {
 
       const { status } = await ImagePicker.requestCameraPermissionsAsync();
       if (status !== "granted") {
-        alert("Sorry, we need camera permissions to make this work!");
+        showToast("Camera permissions are required", "error");
         return null;
       }
 
@@ -58,6 +60,7 @@ export const usePhotoPicker = () => {
       return null;
     } catch (error) {
       console.error("Error taking photo:", error);
+      showToast("Failed to take photo", "error");
       return null;
     } finally {
       setPickingPhoto(false);
