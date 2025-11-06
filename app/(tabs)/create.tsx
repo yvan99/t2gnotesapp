@@ -15,6 +15,7 @@ import { ArrowLeft } from "lucide-react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function CreateNoteScreen() {
+
   const router = useRouter();
   const { createNote } = useNotes();
 
@@ -39,7 +40,7 @@ export default function CreateNoteScreen() {
           contentContainerStyle={{ padding: 16, paddingBottom: 120 }}
           keyboardShouldPersistTaps="handled"
         >
-          <View className="mb-2 border-b border-gray-200 flex-row items-center justify-between">
+          <View className="mb-4 flex-row items-center justify-between">
             <Pressable
               onPress={() => router.back()}
               className="flex-row items-center active:opacity-70"

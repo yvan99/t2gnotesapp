@@ -36,31 +36,40 @@ export default function NotesListScreen() {
               <NoteCard note={item} />
             </Pressable>
           )}
-          ListHeaderComponent={() => (
-            <View className="mb-6">
-              <View className="flex-row items-start justify-between mb-4">
-                <View className="flex-1">
-                  <Text className="text-lg font-bold text-gray-900 mb-2">
-                    Techical notes
-                  </Text>
-                  <Text className="text-base text-gray-600">
-                    {notes.length > 0 &&
-                      `${notes.length} ${notes.length === 1 ? "note" : "notes"} in total`}
-                  </Text>
-                </View>
+          ListHeaderComponent={() =>
+            notes.length > 0 && (
+              <View className="mb-6">
+                <View className="flex-row items-start justify-between mb-4">
+                  <View className="flex-1">
+                    <Text className="text-lg font-bold text-gray-900 mb-2">
+                      Techical notes
+                    </Text>
+                    <Text className="text-base text-gray-600">
+                      {notes.length > 0 &&
+                        `${notes.length} ${notes.length === 1 ? "note" : "notes"} in total`}
+                    </Text>
+                  </View>
 
-                <Pressable
-                  onPress={() => router.push("/(tabs)/create")}
-                  className="bg-blue-500 rounded-full p-3 shadow-sm active:opacity-70"
-                >
-                  <PlusCircle size={24} color="white" />
-                </Pressable>
+                  <Pressable
+                    onPress={() => router.push("/(tabs)/create")}
+                    className="bg-blue-500 rounded-full p-3 shadow-sm active:opacity-70"
+                  >
+                    <PlusCircle size={24} color="white" />
+                  </Pressable>
+                </View>
               </View>
-            </View>
-          )}
-          contentContainerStyle={{ padding: 16, paddingBottom: 120 }}
+            )
+          }
+          contentContainerStyle={{
+            padding: notes.length > 0 ? 16 : 0,
+            flexGrow: 1,
+          }}
           ItemSeparatorComponent={() => <View className="h-3" />}
-          ListEmptyComponent={<EmptyState />}
+          ListEmptyComponent={
+            <View className="flex-1 items-center justify-center h-full">
+              <EmptyState />
+            </View>
+          }
           refreshControl={
             <RefreshControl
               refreshing={loading}
