@@ -56,7 +56,7 @@ export default function SettingsScreen() {
         </View>
 
         <View className="bg-white rounded-xl p-4">
-          <Text className="text-sm text-gray-600">Version 1.0.0</Text>
+          <Text className="text-sm text-gray-600">Developed by ISHIMWE Yvan Version 1.0.0</Text>
         </View>
       </ScrollView>
 
