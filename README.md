@@ -1,6 +1,6 @@
-# 📝 TaskFlow - Technical Tasks Note App
+# 📝 Technical Tasks Note App
 
-[![Demo Video](https://img.shields.io/badge/📺_Watch-Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://your-demo-video-link-here)
+[![Demonstration Video](https://img.shields.io/badge/📺_Watch-Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://your-demo-video-link-here)
 [![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev)
 [![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
