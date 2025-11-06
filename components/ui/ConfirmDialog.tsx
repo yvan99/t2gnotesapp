@@ -1,16 +1,6 @@
 import { Modal, View, Text, Pressable } from "react-native";
 import { AlertTriangle } from "lucide-react-native";
-
-interface ConfirmDialogProps {
-  visible: boolean;
-  title: string;
-  message: string;
-  confirmText?: string;
-  cancelText?: string;
-  onConfirm: () => void;
-  onCancel: () => void;
-  destructive?: boolean;
-}
+import { ConfirmDialogProps } from "@/interfaces/props.interface";
 
 export function ConfirmDialog({
   visible,

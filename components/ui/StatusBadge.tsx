@@ -1,9 +1,5 @@
-import { View, Text } from 'react-native';
-import { NoteStatus } from '@/interfaces/notes.interface';
-
-interface StatusBadgeProps {
-  status: NoteStatus;
-}
+import { StatusBadgeProps } from '@/interfaces/props.interface';
+import { Text, View } from 'react-native';
 
 const statusConfig = {
   Open: { bg: 'bg-blue-100', text: 'text-blue-700', label: 'Open' },

@@ -1,6 +1,6 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { CreateNoteData } from "@/interfaces/notes.interface";
 import { notesStorage } from "@/storage/notes.storage";
-import { CreateNoteData, Note } from "@/interfaces/notes.interface";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 describe("notesStorage", () => {
   beforeEach(async () => {
